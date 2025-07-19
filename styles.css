@@ -1,0 +1,352 @@
+/* 기본 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* PC 스크롤 텍스트 */
+.scroll-text-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: #007bff;
+    color: white;
+    overflow: hidden;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+}
+
+.scroll-text {
+    white-space: nowrap;
+    animation: scroll-left 40s linear infinite;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 40px;
+    padding-left: 100%;
+}
+
+.scroll-text::before {
+    content: "📌 갇혀 있던 프레임이 재구성 되는, 귀한 시간으로 담으시면 좋겠습니다";
+    margin-right: 100px;
+}
+
+.scroll-text::after {
+    content: "📌 갇혀 있던 프레임이 재구성 되는, 귀한 시간으로 담으시면 좋겠습니다";
+    margin-left: 100px;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-200%);
+    }
+}
+
+/* 모바일 헤더 */
+.mobile-header {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    height: 60px;
+}
+
+.mobile-scroll-text-container {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background: #007bff;
+    color: white;
+    overflow: hidden;
+    z-index: 999;
+}
+
+.mobile-scroll-text {
+    white-space: nowrap;
+    animation: scroll-left 30s linear infinite;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 30px;
+    padding-left: 100%;
+}
+
+.mobile-scroll-text::before {
+    content: "📌 갇혀 있던 프레임이 재구성 되는, 귀한 시간으로 담으시면 좋겠습니다";
+    margin-right: 80px;
+}
+
+.mobile-scroll-text::after {
+    content: "📌 갇혀 있던 프레임이 재구성 되는, 귀한 시간으로 담으시면 좋겠습니다";
+    margin-left: 80px;
+}
+
+.mobile-header-content {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    height: 100%;
+}
+
+.mobile-header-content .page-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+    margin-left: 15px;
+}
+
+.mobile-header-content .hamburger-btn {
+    flex-shrink: 0;
+}
+
+.page-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.hamburger-btn {
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 6px 4px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.hamburger-btn span {
+    width: 22px;
+    height: 2px;
+    background: #333;
+    margin: 2px 0;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-btn:hover span {
+    background: #333;
+}
+
+/* 모바일 사이드바 */
+.mobile-sidebar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    z-index: 999;
+    transition: left 0.3s ease;
+}
+
+.mobile-sidebar.active {
+    left: 0;
+}
+
+.sidebar-content {
+    padding: 80px 20px 20px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* PC 사이드바 */
+.pc-sidebar {
+    position: fixed;
+    right: calc(50% - 430px - 250px - 20px);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 250px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    z-index: 100;
+}
+
+/* 썸네일 섹션 */
+.thumbnail-section {
+    text-align: left;
+}
+
+.thumbnail-section .enroll-btn {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.mobile-sidebar .thumbnail-section {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.mobile-sidebar .thumbnail-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.mobile-sidebar .thumbnail-description {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+.thumbnail-image {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.thumbnail-description {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    font-weight: bold;
+    text-align: center;
+}
+
+.enroll-btn {
+    display: inline-block;
+    background: #007bff;
+    color: #fff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.enroll-btn:hover {
+    background: #0056b3;
+}
+
+/* 메인 컨텐츠 */
+.main-content {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.content-wrapper {
+    width: 860px;
+    max-width: 100%;
+}
+
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+}
+
+.content-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: -2px;
+}
+
+/* 반응형 디자인 */
+@media (min-width: 1201px) {
+    .scroll-text-container {
+        display: flex !important;
+    }
+    
+    .mobile-scroll-text-container {
+        display: none;
+    }
+    
+    .main-content {
+        padding-top: 40px;
+    }
+}
+
+/* PC에서 기본적으로 스크롤 텍스트 표시 */
+@media (min-width: 1201px) {
+    .scroll-text-container {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    .pc-sidebar {
+        display: none;
+    }
+    
+    .mobile-header {
+        display: flex;
+    }
+    
+    .mobile-sidebar {
+        display: block;
+    }
+    
+    .scroll-text-container {
+        display: none;
+    }
+    
+    .mobile-scroll-text-container {
+        display: block;
+    }
+    
+    .main-content {
+        padding-top: 90px;
+    }
+}
+
+@media (max-width: 900px) {
+    .content-wrapper {
+        width: 100%;
+        padding: 0 15px;
+    }
+    
+    .main-content {
+        padding: 80px 0 20px;
+    }
+}
+
+/* 오버레이 (모바일 사이드바 열릴 때) */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 998;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+} 
