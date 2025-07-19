@@ -81,7 +81,7 @@ body {
 
 .mobile-scroll-text {
     white-space: nowrap;
-    animation: scroll-left 30s linear infinite;
+    animation: scroll-left 20s linear infinite;
     font-size: 12px;
     font-weight: bold;
     line-height: 30px;
