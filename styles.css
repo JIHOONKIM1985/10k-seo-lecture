@@ -177,7 +177,7 @@ body {
 /* PC 사이드바 */
 .pc-sidebar {
     position: fixed;
-    right: calc(50% - 430px - 250px - 20px);
+    left: calc(50% + 430px + 20px);
     top: 50%;
     transform: translateY(-50%);
     width: 250px;
@@ -263,6 +263,7 @@ body {
 .content-wrapper {
     width: 860px;
     max-width: 100%;
+    margin: 0 auto;
 }
 
 .image-gallery {
@@ -334,6 +335,8 @@ body {
         padding: 80px 0 20px;
     }
 }
+
+
 
 /* 오버레이 (모바일 사이드바 열릴 때) */
 .overlay {
